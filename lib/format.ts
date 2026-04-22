@@ -53,3 +53,13 @@ export function formatCompactUsd(n: number): string {
   if (n >= 1_000) return `$${(n / 1_000).toFixed(2)}K`
   return `$${n.toFixed(2)}`
 }
+
+/** Format an ISO date string as "Apr 21, 2026". */
+export function formatArticleDate(iso: string): string {
+  const d = new Date(iso)
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  })
+}

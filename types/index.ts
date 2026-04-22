@@ -96,3 +96,26 @@ export interface YieldOpportunity {
   tvlUsd: number
   icon?: string
 }
+
+/** News article used by /news list and /news/[slug] detail pages */
+export type NewsCategory =
+  | "AI Agents"
+  | "Monad"
+  | "FX"
+  | "Yield"
+  | "Protocol"
+  | "Market"
+
+export interface NewsArticle {
+  slug: string
+  title: string
+  summary: string
+  category: NewsCategory
+  author: string
+  source: string
+  publishedAt: string // ISO date
+  readMinutes: number
+  tags: string[]
+  /** Array of paragraphs; simple plain-text body to keep things safe and typed */
+  body: string[]
+}

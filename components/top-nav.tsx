@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 const NAV_LINKS = [
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/", label: "Dashboard" },
+  { href: "/news", label: "News" },
 ]
 
 export function TopNav() {
