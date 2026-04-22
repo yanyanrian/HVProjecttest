@@ -2,6 +2,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Clock, User2 } from "lucide-react"
 
+import { AppShell } from "@/components/app-shell"
 import { NewsCard } from "@/components/news/news-card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -36,6 +37,7 @@ export default async function NewsArticlePage({
   const related = getRelatedNews(article.slug, article.category)
 
   return (
+    <AppShell>
     <div className="mx-auto max-w-3xl w-full px-4 md:px-8 py-8 md:py-12 flex flex-col gap-8">
       <Link
         href="/news"
@@ -122,5 +124,6 @@ export default async function NewsArticlePage({
         </section>
       ) : null}
     </div>
+    </AppShell>
   )
 }
